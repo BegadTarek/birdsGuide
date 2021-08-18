@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My first actual app</title>
+</head>
+<body>
+    <h1>Welcome to the jungle!</h1>
+    <form action="/posts" method="POST">
+        <input type="text" placeholder="Name" name="name">
+        <input type="text" placeholder="Entry" name='entry'>
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>Entries</h2>
+
+    <ul class='entries'>
+        <% for (let i= 0; i<posts.length;i++) {%>
+            <li class='entry'>
+                <span><%= posts[i].name %></span>
+                <span>:</span>
+                <span><%= posts[i].entry %></span>
+            </li>
+        <% } %>        
+    </ul>
+</body>
+</html>
